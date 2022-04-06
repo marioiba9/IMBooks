@@ -1,0 +1,21 @@
+<figure class="figure">
+  <img src="http://placehold.it/820x320" class="figure-img img-fluid rounded">
+  <figcaption class="figure-caption">
+    <h4>Titulo: {{book.titulo}}</h4>
+    <h5>Precio: {{book.precio | currency}}</h5>
+    <h5> Isbn: {{book.isbn}}</h5>
+    <h5> Genero: {{book.genero}}</h5>
+    <h5>Autor: {{book.autor}}</h5>
+  </figcaption>
+</figure>
+
+<div class="row mt-4">
+  <div class="col-md-4">
+    <button class="btn btn-outline-secondary mr-3" style="width:80px" (click)="onBack()">
+      <i class="fa fa-chevron-left"></i> Back
+    </button>
+    <button class="btn btn-outline-primary" style="width:80px" (click)="goEdit()">
+      Edit
+    </button>
+  </div>
+</div>

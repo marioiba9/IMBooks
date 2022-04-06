@@ -1,0 +1,9 @@
+<figure class="figure">
+  <img src="{{book.image}}" class="figure-img img-fluid rounded">
+  <figcaption class="figure-caption">
+    <h5><a [routerLink]="['/books', book.id]">{{book.titulo}}</a>
+      <span>{{book.precio | currency}}</span>
+    </h5>
+    <p>{{book.autor}}</p>
+  </figcaption>
+</figure>
