@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookEditComponent } from './book-edit/book-edit.component';
-import { BookNewComponent } from './book-new/book-new.component';
+import { HomePage } from './home/home.page';
+import { BookDetailPage } from './book-detail/book-detail.page';
+import { BookNewPage } from './book-new/book-new.page';
+import { BookEditPage } from './book-edit/book-edit.page';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'Books/:id/new', component: BookNewComponent },
-  { path: 'Books/:BookId', component: BookDetailComponent },
-  { path: 'Books/:id/edit', component: BookEditComponent },
+  { path: '', component: HomePage },
+  { path: 'books/:id/new', component: BookNewPage },
+  { path: 'books/:bookId', component: BookDetailPage },
+  { path: 'books/:id/edit', component: BookEditPage },
 ];
 
 @NgModule({

@@ -5,5 +5,5 @@ export interface Book {
   isbn: number;
   genero: string;
   autor: string;
-  image: '';
+  image: string;
 }

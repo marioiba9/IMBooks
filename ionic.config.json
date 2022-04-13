@@ -1,0 +1,7 @@
+{
+  "name": "imbooks",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

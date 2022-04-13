@@ -11,7 +11,6 @@ import { Book } from './Book';
 })
 export class BookService {
   private booksUrl = 'api/books';
-
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<Book[]> {

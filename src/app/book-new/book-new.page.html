@@ -1,0 +1,73 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>{{pageTitle}}</ion-card-header>
+    <div *ngIf="!isLoading">
+      <ion-card-content>
+        <form novalidate (ngSubmit)="saveBook()" [formGroup]="bookForm">
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="bookNameId">Titulo</label>
+            <div class="col-md-8">
+              <input class="form-control" id="tituloId" type="text" placeholder="Titulo" formControlName="titulo"
+                name="titulo" />
+            </div>
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="precioId">Precio</label>
+
+            <div class="col-md-8">
+              <input class="form-control" id="precioId" type="text" placeholder="Precio" formControlName="precio"
+                name="precio" />
+            </div>
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="isbnId">Isbn</label>
+
+            <div class="col-md-8">
+              <textarea class="form-control" id="isbnId" placeholder="Isbn" formControlName="isbn"
+                name="isbn"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="generoId">Genero</label>
+
+            <div class="col-md-8">
+              <textarea class="form-control" id="generoId" placeholder="genero" formControlName="genero"
+                name="genero"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="autorId">Autor</label>
+
+            <div class="col-md-8">
+              <input class="form-control" id="autorId" placeholder="autor" formControlName="autor" name="autor" />
+            </div>
+          </div>
+
+
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="imageId">Foto</label>
+
+            <div class="col-md-8">
+              <input class="form-control" id="imageId" placeholder="Images" formControlName="image" name="image" />
+            </div>
+          </div>
+          <div class="form-group row mb-2">
+            <div class="offset-md-2 col-md-4">
+              <ion-button color="success" type="submit">
+                Save
+              </ion-button>
+
+              <ion-button color="danger" [routerLink]="['']">
+                Cancel
+              </ion-button>
+            </div>
+          </div>
+        </form>
+      </ion-card-content>
+    </div>
+  </ion-card>
+</ion-content>

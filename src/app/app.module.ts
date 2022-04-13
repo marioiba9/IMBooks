@@ -1,43 +1,47 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
 
-// Import for loading & configuring in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
-import { BookItemComponent } from './book-item/book-item.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookDetailPage } from './book-detail/book-detail.page';
+import { BookEditPage } from './book-edit/book-edit.page';
+import { BookItemPage } from './book-item/book-item.page';
+import { BookNewPage } from './book-new/book-new.page';
 import { BookService } from './shared/book.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-import { BookEditComponent } from './book-edit/book-edit.component';
-import { BookData } from './shared/book-data';
 import { HttpClientModule } from '@angular/common/http';
-import { BookNewComponent } from './book-new/book-new.component';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { BookData } from './shared/book-data';
+import { HomePage } from './home/home.page';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    FooterComponent,
     NavbarComponent,
-    BookItemComponent,
-    BookDetailComponent,
-    BookEditComponent,
-    BookNewComponent,
+    HomePage,
+    BookDetailPage,
+    BookEditPage,
+    BookItemPage,
+    BookNewPage,
   ],
+  entryComponents: [],
   imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
-    BrowserModule,
     HttpClientModule,
     InMemoryWebApiModule.forRoot(BookData),
   ],
-  providers: [BookService],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    BookService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

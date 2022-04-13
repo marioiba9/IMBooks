@@ -1,0 +1,14 @@
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col *ngFor="let book of books" size="4">
+                <app-book-item [book]="book"></app-book-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<!--<div class="row">
+        <div *ngFor="let book of books" class="col-12 col-md-6  col-lg-4">
+            <app-book-item [book]="book"></app-book-item>
+        </div>
+    </div> -->
