@@ -1,0 +1,27 @@
+<ion-content>
+  <br />
+  <br />
+  <br />
+  <br />
+  <ion-card *ngIf="loading">
+    <img src="{{ book.image }}" class="user-avatar" />
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ book.titulo }}</ion-card-title>
+        <ion-card-subtitle>
+          <h1>{{ book.autor }}</h1>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content> Genero: {{ book.genero }} </ion-card-content>
+      <ion-card-content> Precio: {{ book.precio }}€ </ion-card-content>
+      <ion-button color="secondary" (click)="goEdit()">
+        <ion-icon name="create-outline"></ion-icon>
+        EDIT
+      </ion-button>
+      <ion-button color="danger" [routerLink]="['']">
+        <ion-icon name="arrow-undo-outline"></ion-icon>
+        BACK
+      </ion-button>
+    </ion-card>
+  </ion-card>
+</ion-content>

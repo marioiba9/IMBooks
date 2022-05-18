@@ -1,0 +1,47 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>{{pageTitle}}</ion-card-header>
+    <div>
+      <ion-card-content>
+        <form (ngSubmit)="saveBook()" [formGroup]="bookForm">
+          <ion-title size="large">NUEVO LIBRO</ion-title>
+          <br />
+          <ion-item>
+            <ion-label>Titulo</ion-label>
+            <ion-input titulo="text" placeholder="Titulo" name="titulo" formControlName="titulo" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Precio</ion-label>
+            <ion-input titulo="text" placeholder="Precio" name="precio" formControlName="precio" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Isbn</ion-label>
+            <ion-input titulo="text" placeholder="Isbn" name="isbn" formControlName="isbn" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Genero</ion-label>
+            <ion-input titulo="text" placeholder="Genero" name="genero" formControlName="genero" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Autor</ion-label>
+            <ion-input titulo="text" placeholder="Autor" name="autor" formControlName="autor" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Image</ion-label>
+            <ion-input titulo="text" placeholder="Foto" name="image" formControlName="image" required></ion-input>
+          </ion-item>
+          <br />
+          <ion-button color="secondary" (click)="saveBook()">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            ADD
+          </ion-button>
+          <ion-button color="danger" [routerLink]="['']">
+            <ion-icon name="arrow-undo-outline"></ion-icon>
+            CANCEL
+          </ion-button>
+        </form>
+
+      </ion-card-content>
+    </div>
+  </ion-card>
+</ion-content>
